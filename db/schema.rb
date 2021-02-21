@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_21_222600) do
+ActiveRecord::Schema.define(version: 2021_02_21_222740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaign_qualifications", force: :cascade do |t|
+    t.bigint "campaign_quota_id", null: false
+    t.integer "question_id"
+    t.text "pre_codes"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["campaign_quota_id"], name: "index_campaign_qualifications_on_campaign_quota_id"
+  end
 
   create_table "campaign_quotas", force: :cascade do |t|
     t.integer "api_id"
@@ -36,5 +45,6 @@ ActiveRecord::Schema.define(version: 2021_02_21_222600) do
     t.index ["api_id"], name: "index_campaigns_on_api_id"
   end
 
+  add_foreign_key "campaign_qualifications", "campaign_quotas"
   add_foreign_key "campaign_quotas", "campaigns"
 end
