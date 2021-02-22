@@ -25,24 +25,20 @@ ActiveRecord::Schema.define(version: 2021_02_21_222740) do
   end
 
   create_table "campaign_quotas", force: :cascade do |t|
-    t.integer "api_id"
     t.bigint "campaign_id", null: false
-    t.integer "num_respondendts"
+    t.integer "num_respondents"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["api_id"], name: "index_campaign_quotas_on_api_id"
     t.index ["campaign_id"], name: "index_campaign_quotas_on_campaign_id"
   end
 
   create_table "campaigns", force: :cascade do |t|
-    t.integer "api_id"
     t.integer "length_of_interview"
     t.string "cpi"
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["api_id"], name: "index_campaigns_on_api_id"
   end
 
   add_foreign_key "campaign_qualifications", "campaign_quotas"

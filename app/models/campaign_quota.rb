@@ -2,17 +2,15 @@
 #
 # Table name: campaign_quotas
 #
-#  id               :bigint           not null, primary key
-#  name             :string
-#  num_respondendts :integer
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  api_id           :integer
-#  campaign_id      :bigint           not null
+#  id              :bigint           not null, primary key
+#  name            :string
+#  num_respondents :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  campaign_id     :bigint           not null
 #
 # Indexes
 #
-#  index_campaign_quotas_on_api_id       (api_id)
 #  index_campaign_quotas_on_campaign_id  (campaign_id)
 #
 # Foreign Keys
