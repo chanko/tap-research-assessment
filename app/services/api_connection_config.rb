@@ -1,7 +1,7 @@
 # Class that holds basic configuration information to connect
 # to TapReserach API with credentials stored in encrypted
 # credentials file
-class ApiConectionConfig
+class ApiConnectionConfig
   # According to docs, HTTP basic authentication combined with 
   # HTTPS is used
   #
