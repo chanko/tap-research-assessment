@@ -7,13 +7,13 @@ require 'rails_helper'
 RSpec.describe ApiConnectionConfig, type: :model do
   let(:config) { ApiConnectionConfig.new }
 
-  context '#authorization_token' do
+  describe '#authorization_token' do
     it 'returns correct authorization token' do
       expect(config.authorization_token).to eq('Basic Y29kZXRlc3RAdGFwLmNvbTp0b2tlbmZvcnRlc3Rnb2VzaGVyZQ==')
     end
   end
 
-  context '#base_url' do
+  describe '#base_url' do
     it 'returns correct base_url' do
       expect(config.base_url).to eq('https://test.tapresearch.com')
     end

@@ -6,7 +6,7 @@ RSpec.describe CampaignsRetriever, type: :model do
   let(:connection) { Faraday.new { |b| b.adapter(:test, stubs) } }
   let(:retriever) { CampaignsRetriever.new(connection) }
 
-  context '#retrieve' do
+  describe '#retrieve' do
     before(:each) do
       allow(connection).to receive(:get)
         .with('/api/v1/campaigns')
