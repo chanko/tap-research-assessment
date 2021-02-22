@@ -16,10 +16,41 @@ RSpec.describe CampaignsRetriever, type: :model do
       )
     end
 
-    it 'creates 2 Campaign objects' do
-      expect{retriever.retrieve}.to change{Campaign.count}.from(0).to(2)
-      
-      stubs.verify_stubbed_calls
+    it 'returns JSON parsed response' do
+      expected_response = [
+        {
+          'cpi' => '2.0', 
+          'days_in_field' => 5, 
+          'id' => 278562, 
+          'incidence' => 100, 
+          'is_retarget' => false, 
+          'length_of_interview' => 10,
+          'max_daily_completes' => nil,
+          'supplier_link' => 'http://www.developingmedia.com/adhoc.php?id=', 
+          'total_remaining' => 123,
+          'name' => 'Cereal',
+          'reentry_interval' => nil,
+          'status' => 6,
+          'supplier_link' => 'http://www.developingmedia.com/adhoc.php?id=',
+          'total_remaining' => 100
+        },
+        {
+          'cpi' => '1.25',
+          'days_in_field' => 5,
+          'id' => 278563,
+          'incidence' => 50,
+          'is_retarget' => false,
+          'length_of_interview' => 2,
+          'max_daily_completes' => nil,
+          'name' => 'Pizza',
+          'reentry_interval' => nil,
+          'status' => 6,
+          'supplier_link' => 'http://www.developingmedia.com/adhoc.php?id=',
+          'total_remaining' => 123
+        }
+      ]
+
+      expect(retriever.retrieve).to eq(expected_response)
     end
   end
 end
