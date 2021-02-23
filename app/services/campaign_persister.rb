@@ -1,3 +1,9 @@
+# Class that receives a parsed json object and checks if a Campaign object with
+# the same ID already exists. 
+#
+# If it does, it returns the already persisted object.
+# 
+# If it doesn't, then it creates it.
 class CampaignPersister
   attr_reader :id, :cpi, :length_of_interview, :name
 

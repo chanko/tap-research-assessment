@@ -1,3 +1,6 @@
+# Class that constructs a Faraday connection object with the 
+# correct Authorization header set, getting the needed data from
+# the ApiConnectionConfig class.
 class ApiConnection
   def self.connection
     self.new.connection  

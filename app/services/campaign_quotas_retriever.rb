@@ -1,3 +1,5 @@
+# Class that gets a specific campaign from TapResearch API, parses the body
+# and returns it
 class CampaignQuotasRetriever
   CAMPAIGNS_URL = '/api/v1/campaigns'
 

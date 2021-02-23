@@ -16,16 +16,16 @@ class ApiConnectionConfig
   end
 
   def base_url
-    @base_url ||= Rails.application.credentials.tap_research_api[:url]
+    @base_url ||= Rails.application.credentials.dig(:tap_research_api, :url)
   end
 
   private
 
   def email
-    @email ||= Rails.application.credentials.tap_research_api[:email]
+    @email ||= Rails.application.credentials.dig(:tap_research_api, :email)
   end
 
   def token
-    @token ||= Rails.application.credentials.tap_research_api[:token]
+    @token ||= Rails.application.credentials.dig(:tap_research_api, :token)
   end
 end

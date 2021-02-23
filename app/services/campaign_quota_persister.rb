@@ -1,3 +1,9 @@
+# Class that receives a parsed json object and checks if a 
+# CampaignQuota object with the same ID already exists. 
+#
+# If it does, it returns the already persisted object.
+# 
+# If it doesn't, then it creates it.
 class CampaignQuotaPersister
   attr_reader :campaign_id, :id, :name, :num_respondents
 

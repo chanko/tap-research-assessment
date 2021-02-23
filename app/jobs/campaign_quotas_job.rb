@@ -1,3 +1,5 @@
+# Job that retrieves a specific campaign, persists its quotas
+# and then persists its qualifications
 class CampaignQuotasJob < ApplicationJob
   queue_as :default
   sidekiq_options retry: false
