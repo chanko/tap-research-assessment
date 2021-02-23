@@ -1,5 +1,6 @@
 class CampaignsJob < ApplicationJob
   queue_as :default
+  sidekiq_options retry: false
 
   def perform
     json = CampaignsRetriever.new(ApiConnection.connection).retrieve

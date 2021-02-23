@@ -1,5 +1,6 @@
 class CampaignQuotasJob < ApplicationJob
   queue_as :default
+  sidekiq_options retry: false
 
   def perform(campaign_id)
     json = CampaignQuotasRetriever.new(
