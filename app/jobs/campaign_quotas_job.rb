@@ -2,7 +2,7 @@ class CampaignQuotasJob < ApplicationJob
   queue_as :default
 
   def perform(campaign_id)
-    json = CampaignQuotasRetriever.new
+    json = CampaignQuotasRetriever.new(
       campaign_id: campaign_id, 
       connection: ApiConnection.connection
     ).retrieve
