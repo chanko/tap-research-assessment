@@ -28,3 +28,5 @@
 
 /config/credentials/test.key
 .env.development.local
+
+/config/credentials/production.key
