@@ -2,12 +2,13 @@
 #
 # Table name: campaign_quotas
 #
-#  id              :bigint           not null, primary key
-#  name            :string
-#  num_respondents :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  campaign_id     :bigint           not null
+#  id                            :bigint           not null, primary key
+#  campaign_qualifications_count :integer
+#  name                          :string
+#  num_respondents               :integer
+#  created_at                    :datetime         not null
+#  updated_at                    :datetime         not null
+#  campaign_id                   :bigint           not null
 #
 # Indexes
 #

@@ -18,5 +18,5 @@
 #  fk_rails_...  (campaign_quota_id => campaign_quotas.id)
 #
 class CampaignQualification < ApplicationRecord
-  belongs_to :campaign_quota
+  belongs_to :campaign_quota, counter_cache: true
 end
