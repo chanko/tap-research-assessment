@@ -14,5 +14,9 @@ class CampaignQuotasRetriever
     raw_response = connection.get("#{CAMPAIGNS_URL}/#{campaign_id}").body
     
     JSON.parse(raw_response)
+  rescue => error
+    Rails.logger.error("[ERROR] - #{error}")
+
+    JSON.parse('{}')
   end
 end

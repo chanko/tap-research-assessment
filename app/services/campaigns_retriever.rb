@@ -13,5 +13,9 @@ class CampaignsRetriever
     raw_response = connection.get(CAMPAIGNS_URL).body
 
     JSON.parse(raw_response)
+  rescue => error
+    Rails.logger.error("[ERROR] - #{error}")
+    
+    return JSON.parse('[{}]')
   end
 end
