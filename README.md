@@ -1,4 +1,4 @@
-# TapResarch Assessment
+# TapResearch Assessment
 
 ## Objective
 The objective of this assessment was to create a Ruby on Rails project that:
