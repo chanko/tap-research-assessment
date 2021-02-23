@@ -10,7 +10,7 @@ class CampaignsJob < ApplicationJob
     json.each do |data|
       campaign = CampaignPersister.new(data).persist
 
-      CampaignQuotasJob.perform_later(campaign.id)
+      CampaignQuotasJob.perform_later(campaign.id) if campaign.persisted?
     end
   end
 end

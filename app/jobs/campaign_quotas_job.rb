@@ -16,6 +16,9 @@ class CampaignQuotasJob < ApplicationJob
         json: quota_data
       ).persist
 
+      # return early if quota wasn't saved successfully
+      return unless quota.persisted?
+
       qualifications_data = quota_data.fetch('campaign_qualifications', [])
       qualifications_data.each do |qualification_data|
         CampaignQualificationPersister.new(
