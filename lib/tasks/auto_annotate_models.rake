@@ -29,7 +29,7 @@ if Rails.env.development?
       'exclude_tests'               => 'true',
       'exclude_fixtures'            => 'false',
       'exclude_factories'           => 'false',
-      'exclude_serializers'         => 'false',
+      'exclude_serializers'         => 'true',
       'exclude_scaffolds'           => 'true',
       'exclude_controllers'         => 'true',
       'exclude_helpers'             => 'true',
