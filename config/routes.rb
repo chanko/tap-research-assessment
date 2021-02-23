@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   scope module: 'campaigns' do
     get 'ordered_campaigns'
   end
+
+  root to: redirect('/ordered_campaigns.json', status: 302)
 end
