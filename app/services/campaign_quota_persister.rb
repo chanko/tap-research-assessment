@@ -9,11 +9,10 @@ class CampaignQuotaPersister
   end
 
   def persist
-    CampaignQuota.create(
+    CampaignQuota.create_with(
       campaign_id: campaign_id,
-      id: id,
       name: name,
       num_respondents: num_respondents
-    )
+    ).find_or_create_by(id: id)
   end
 end

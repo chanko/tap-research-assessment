@@ -8,10 +8,11 @@ class CampaignQualificationPersister
   end
 
   def persist
-    CampaignQualification.create(
-      campaign_quota_id: campaign_quota_id,
-      question_id: question_id,
-      pre_codes: pre_codes
-    )
+    CampaignQualification.
+      create_with(pre_codes: pre_codes).
+      find_or_create_by(
+        question_id: question_id, 
+        campaign_quota_id: campaign_quota_id
+      )
   end
 end

@@ -9,11 +9,10 @@ class CampaignPersister
   end
 
   def persist
-    Campaign.create(
-      id: id,
+    Campaign.create_with(
       cpi: cpi,
       length_of_interview: length_of_interview,
       name: name
-    )
+    ).find_or_create_by(id: id)
   end
 end
