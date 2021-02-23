@@ -6,6 +6,10 @@ The objective of this assessment was to create a Ruby on Rails project that:
 - Stores responses in a relational database
 - Defines a custom route that returns all stored Campaigns with nested Campaign Quotas and Campaign Qualifications, ordered by the number of Campaign Qualifiations, in JSON format
 
+## Live Example
+http://4lor.hatchboxapp.com
+
+
 ## Local Installation
 This is a fairly straightforward Rails application.
 
@@ -36,6 +40,3 @@ Run your local server and navigate to `localhost:3000/ordered_campaigns.json` to
 ```
 rails server
 ```
-
-## Live Example
-http://4lor.hatchboxapp.com
