@@ -1,6 +1,11 @@
 class CampaignsController < ApplicationController
   def ordered_campaigns
-    @campaigns = Campaign.includes(:campaign_quotas, :campaign_qualifications).left_outer_joins(:campaign_qualifications).group('campaigns.id').select('campaigns.*, count(*) as qualifications_count').order('qualifications_count DESC')
+    @campaigns = Campaign
+      .left_outer_joins(:campaign_quotas)
+      .includes(:campaign_quotas, :campaign_qualifications)
+      .group('campaigns.id')
+      .select('campaigns.*')
+      .order('SUM(campaign_qualifications_count) DESC NULLS LAST')
 
     render json: @campaigns
   rescue => error
