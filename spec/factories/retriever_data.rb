@@ -24,13 +24,13 @@ FactoryBot.define do
     id { Faker::Number.number(digits: 5) }
     num_respondents { Faker::Number.number(digits: 3) }
     name { Faker::Food.dish }
-    campaign_qualifications { build(:campaign_qualification) }
+    campaign_qualifications { [build(:campaign_qualification)] }
 
     initialize_with { attributes } 
   end
 
   factory :campaign_qualification, class: Hash do
-    question_id { Faker::Number.number(5) }
+    question_id { Faker::Number.number(digits: 5) }
     pre_codes { Array.new(rand(1..100)) { rand(1..100) } }
 
     initialize_with { attributes } 
